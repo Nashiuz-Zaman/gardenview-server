@@ -4,8 +4,19 @@ const applyMiddlewares = require("./middlewares/applyMiddlewares");
 const verifyToken = require("./middlewares/verifyToken");
 const connectDB = require("./db/connectDb");
 
+// routing
+const jwtRoute = require("./routes/jwt/index");
+// logout
+const logoutRoute = require("./routes/logout/index");
+
 const app = express();
 const port = process.env.PORT || 5000;
+
+// create jwt token
+app.use(jwtRoute);
+
+// logout and delete cookie
+app.use(logoutRoute);
 
 // basic common middleware for express.json, cors, cookie-parser
 applyMiddlewares(app);
