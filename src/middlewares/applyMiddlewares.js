@@ -1,3 +1,4 @@
+// import necessary packages
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -8,4 +9,5 @@ const applyMiddlewares = (app) => {
   app.use(cookieParser());
 };
 
+// export
 module.exports = applyMiddlewares;
