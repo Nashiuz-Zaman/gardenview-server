@@ -1,6 +1,5 @@
 // import necessary packages
 const express = require("express");
-const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const applyMiddlewares = (app) => {
@@ -11,7 +10,6 @@ const applyMiddlewares = (app) => {
     })
   );
   app.use(express.json());
-  app.use(cookieParser());
 };
 
 // export

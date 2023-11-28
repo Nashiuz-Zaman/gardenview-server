@@ -5,8 +5,8 @@ const verifyToken = require("./middlewares/verifyToken");
 const connectDB = require("./db/connectDb");
 
 // import routes
-const logoutRoute = require("./routes/logout/");
 const userRoutes = require("./routes/users/index");
+const loginRoleCheckRoutes = require("./routes/authorization/index");
 
 // app setup
 const app = express();
@@ -16,15 +16,8 @@ const port = process.env.PORT || 5000;
 applyMiddlewares(app);
 
 // all the routes handling is here below
-
-// create jwt token
-app.use(jwtRoute);
-
-// logout and delete cookie
-app.use(logoutRoute);
-
-// user creation route
 app.use(userRoutes);
+app.use(loginRoleCheckRoutes);
 
 // test
 app.get("/health", (req, res) => {
