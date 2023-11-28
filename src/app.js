@@ -4,17 +4,15 @@ const applyMiddlewares = require("./middlewares/applyMiddlewares");
 const verifyToken = require("./middlewares/verifyToken");
 const connectDB = require("./db/connectDb");
 
-// routing
-const jwtRoute = require("./routes/jwt/");
-// logout
+// import routes
 const logoutRoute = require("./routes/logout/");
-// user creation
-const userCreationRoute = require("./routes/users/index");
+const userRoutes = require("./routes/users/index");
 
+// app setup
 const app = express();
 const port = process.env.PORT || 5000;
 
-// basic common middleware for express.json, cors, cookie-parser
+// basic common middleware for express.json, cors
 applyMiddlewares(app);
 
 // all the routes handling is here below
@@ -26,7 +24,7 @@ app.use(jwtRoute);
 app.use(logoutRoute);
 
 // user creation route
-app.use(userCreationRoute);
+app.use(userRoutes);
 
 // test
 app.get("/health", (req, res) => {
