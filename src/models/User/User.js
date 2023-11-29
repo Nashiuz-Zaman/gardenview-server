@@ -13,6 +13,24 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  agreementDate: {
+    type: String,
+    required: true,
+  },
+  rentedApt: {
+    floor: {
+      type: String,
+      required: true,
+    },
+    block: {
+      type: String,
+      required: true,
+    },
+    aptNo: {
+      type: String,
+      required: true,
+    },
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);

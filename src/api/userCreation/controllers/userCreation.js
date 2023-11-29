@@ -11,7 +11,6 @@ const createUser = async (req, res) => {
   // if user created successfully generate token
   if (result._id) {
     const token = generateToken({ email: user.email });
-
     return res.send({ success: true, token });
   }
 };

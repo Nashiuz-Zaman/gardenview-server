@@ -7,6 +7,7 @@ const connectDB = require("./db/connectDb");
 // import routes
 const userRoutes = require("./routes/users/index");
 const loginRoleCheckRoutes = require("./routes/authorization/index");
+const flatsRoutes = require("./routes/flats/index");
 
 // app setup
 const app = express();
@@ -18,6 +19,7 @@ applyMiddlewares(app);
 // all the routes handling is here below
 app.use(userRoutes);
 app.use(loginRoleCheckRoutes);
+app.use(flatsRoutes);
 
 // test
 app.get("/health", (req, res) => {

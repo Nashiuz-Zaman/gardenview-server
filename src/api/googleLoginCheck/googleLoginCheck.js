@@ -9,8 +9,6 @@ const googleLoginCheck = async (req, res) => {
   const user = await User.findOne({ email: googleUser.email });
   const token = generateToken({ email: googleUser.email });
 
-  console.log(user);
-
   // if user already exists, don't save in database, just take role and create token and send them
   if (user) {
     return res.send({ success: true, role: user.role, token });
@@ -20,6 +18,12 @@ const googleLoginCheck = async (req, res) => {
       name: googleUser.name,
       email: googleUser.email,
       role: "user",
+      agreementDate: "none",
+      rentedApt: {
+        floor: "none",
+        block: "none",
+        aptNo: "none",
+      },
     };
 
     const result = await User.create(newGoogleUser);
