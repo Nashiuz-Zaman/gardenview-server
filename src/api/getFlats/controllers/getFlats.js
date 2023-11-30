@@ -14,6 +14,7 @@ const getFlats = async (req, res) => {
     return res.send({ success: true, flats: flats, count: count });
   }
 
+  // convert true/false string to boolean true/false
   const boolean = booked === "true";
   const query = Flats.find({ booked: boolean })
     .skip(parseInt(skip))
