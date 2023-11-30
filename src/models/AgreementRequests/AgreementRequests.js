@@ -13,6 +13,10 @@ const agreementRequests = new mongoose.Schema({
     type: String,
     required: true,
   },
+  flatId: {
+    type: String,
+    required: true,
+  },
   blockName: {
     type: String,
     required: true,

@@ -8,7 +8,7 @@ const updateFlat = async (req, res) => {
 
   const flat = await Flats.findOneAndUpdate(filter, update, { new: true });
 
-  if (flat.booked) {
+  if (flat) {
     return res.send({ success: true });
   }
 };

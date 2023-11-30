@@ -1,9 +1,7 @@
 // import
 const checkEmailExists = require("../../../utils/checkEmailExists");
 
-const User = require("../../../models/User/User");
-
-const checkUserExists = async (req, res) => {
+const checkUser = async (req, res) => {
   const { email } = req.body;
   // check if user exists first
   const emailExists = await checkEmailExists(email);
@@ -17,4 +15,4 @@ const checkUserExists = async (req, res) => {
   }
 };
 
-module.exports = checkUserExists;
+module.exports = checkUser;
