@@ -42,9 +42,11 @@ app.use((err, req, res, next) => {
 });
 
 // this function connects to database and turns on the app
-const main = async () => {
-  await connectDB();
-  app.listen(port);
-};
+// const main = async () => {
+//   await connectDB();
+//   app.listen(port);
+// };
 
-main();
+// main();
+
+module.exports = app;
