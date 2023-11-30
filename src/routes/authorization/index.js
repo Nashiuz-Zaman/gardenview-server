@@ -12,6 +12,7 @@ router.post("/login", loginRoleCheck);
 
 router.post("/google-login", googleLoginCheck);
 
+// this also sends the full user information besides role so that we can store it for later use
 router.post("/role", roleCheck);
 
 module.exports = router;

@@ -28,7 +28,12 @@ const googleLoginCheck = async (req, res) => {
 
     const result = await User.create(newGoogleUser);
     if (result._id) {
-      return res.send({ success: true, role: "user", token: token });
+      return res.send({
+        success: true,
+        role: "user",
+        token: token,
+        user: result,
+      });
     }
   }
 };
