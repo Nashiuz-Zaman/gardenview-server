@@ -1,5 +1,4 @@
 // import
-
 const generateToken = require("../../../utils/generateToken");
 const User = require("./../../../models/User/User");
 
