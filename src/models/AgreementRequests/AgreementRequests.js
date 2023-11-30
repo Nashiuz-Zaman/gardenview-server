@@ -26,13 +26,13 @@ const agreementRequests = new mongoose.Schema({
     required: true,
   },
   status: {
-    type: string,
+    type: String,
     required: true,
   },
-  agreementReqData: {
-    type: string,
+  agreementReqDate: {
+    type: String,
     required: true,
   },
 });
 
-module.exports = mongoose.model("Announcements", agreementRequests);
+module.exports = mongoose.model("AgreementRequests", agreementRequests);

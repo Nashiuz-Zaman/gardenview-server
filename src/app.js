@@ -1,7 +1,6 @@
 // import necessary packages
 const express = require("express");
 const applyMiddlewares = require("./middlewares/applyMiddlewares");
-const verifyToken = require("./middlewares/verifyToken");
 const connectDB = require("./db/connectDb");
 
 // import routes
@@ -9,6 +8,7 @@ const userRoutes = require("./routes/users/index");
 const loginRoleCheckRoutes = require("./routes/authorization/index");
 const flatsRoutes = require("./routes/flats/index");
 const announcementRoutes = require("./routes/announcements/index");
+const agreementRoutes = require("./routes/agreementRequests/index");
 
 // app setup
 const app = express();
@@ -22,6 +22,7 @@ app.use(userRoutes);
 app.use(loginRoleCheckRoutes);
 app.use(flatsRoutes);
 app.use(announcementRoutes);
+app.use(agreementRoutes);
 
 // test
 app.get("/health", (req, res) => {
