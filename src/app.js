@@ -8,6 +8,7 @@ const connectDB = require("./db/connectDb");
 const userRoutes = require("./routes/users/index");
 const loginRoleCheckRoutes = require("./routes/authorization/index");
 const flatsRoutes = require("./routes/flats/index");
+const announcementRoutes = require("./routes/announcements/index");
 
 // app setup
 const app = express();
@@ -20,6 +21,7 @@ applyMiddlewares(app);
 app.use(userRoutes);
 app.use(loginRoleCheckRoutes);
 app.use(flatsRoutes);
+app.use(announcementRoutes);
 
 // test
 app.get("/health", (req, res) => {
