@@ -5,7 +5,7 @@ const connectDB = require("./db/connectDb");
 
 // import routes
 const userRoutes = require("./routes/users/index");
-const loginRoleCheckRoutes = require("./routes/authorization/index");
+const authRoutes = require("./routes/auth/index");
 const flatsRoutes = require("./routes/flats/index");
 const announcementRoutes = require("./routes/announcements/index");
 const agreementRoutes = require("./routes/agreementRequests/index");
@@ -19,7 +19,7 @@ applyMiddlewares(app);
 
 // all the routes handling is here below
 app.use(userRoutes);
-app.use(loginRoleCheckRoutes);
+app.use(authRoutes);
 app.use(flatsRoutes);
 app.use(announcementRoutes);
 app.use(agreementRoutes);
