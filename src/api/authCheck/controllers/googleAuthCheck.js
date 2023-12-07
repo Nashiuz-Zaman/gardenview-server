@@ -19,7 +19,7 @@ const googleAuthCheck = async (req, res) => {
       email: googleUser.email,
       imageSource: googleUser.image,
       role: "user",
-      rentedApt: [],
+      rentedApartments: [],
     };
 
     const newCreatedUser = await User.create(newGoogleUser);

@@ -17,9 +17,13 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  rentedApt: [
+  rentedApartments: [
     {
-      agreementDate: {
+      agreementRequestDate: {
+        type: String,
+        required: true,
+      },
+      agreementAcceptDate: {
         type: String,
         required: true,
       },
