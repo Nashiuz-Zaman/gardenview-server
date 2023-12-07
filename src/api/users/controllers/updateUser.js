@@ -6,9 +6,19 @@ const updateUser = async (req, res) => {
   const update = req.body;
   const filter = { email: email };
 
-  const user = await User.findOneAndUpdate(filter, update, {
-    new: true,
-  });
+  const role = update.role;
+  const newlyRentedApartment = update.newlyRentedApartment;
+
+  const user = await User.findOneAndUpdate(
+    filter,
+    {
+      $set: { role: role },
+      $push: { rentedApartments: newlyRentedApartment },
+    },
+    {
+      new: true,
+    }
+  );
 
   if (user) {
     return res.send({ success: true });

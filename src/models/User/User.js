@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema({
   },
   rentedApartments: [
     {
+      flatId: {
+        type: String,
+        required: true,
+      },
       agreementRequestDate: {
         type: String,
         required: true,
