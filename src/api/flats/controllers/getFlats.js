@@ -5,7 +5,7 @@ const getFlats = async (req, res) => {
   const { booked, limit, skip } = req.query;
 
   // if no booked query then send all
-  if (!booked) {
+  if (booked === "all") {
     const query = Flats.find().skip(parseInt(skip)).limit(parseInt(limit));
     const queryCount = Flats.countDocuments();
 
